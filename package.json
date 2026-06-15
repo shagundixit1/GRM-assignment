@@ -1,0 +1,14 @@
+{
+  "name": "mini-crm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix crm-backend && npm install --prefix channel-service && npm install --prefix frontend",
+    "dev": "concurrently --names \"CRM,CHANNEL,FRONTEND\" --prefix-colors \"cyan,green,magenta\" \"npm run dev --prefix crm-backend\" \"npm run dev --prefix channel-service\" \"npm run dev --prefix frontend\"",
+    "seed": "npm run seed --prefix crm-backend",
+    "setup": "npm run install:all && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
